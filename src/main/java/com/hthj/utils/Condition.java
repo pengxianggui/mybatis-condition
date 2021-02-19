@@ -11,12 +11,21 @@ import java.lang.annotation.*;
 public @interface Condition {
     /**
      * 声明自定义时, 必须指定custom的值。
-     * 当声明 Conditions.Between时, 必须指定rangeType
+     * 当声明 Conditions.Between时, 必须指定rangeType, 且前后区间的两个字段@Condition注解的value值必须都为对应Entity中的字段。
+     * example:
+     * <pre>
+     * &#064;Condition(value = Conditions.Between, field = "birthday")
+     * private LocalDate birthdayStart;
+     *
+     * &#064;Condition(value = Conditions.Between, field = "birthday", rangeType = RangeType.END)
+     * private LocalDate birthdayEnd;
+     * </pre>
      */
     Conditions value() default Conditions.Eq;
 
     /**
-     * 字段名, 默认会使用Condition中声明的字段名
+     * 字段名, 默认会使用Condition中声明的字段名。因此，当Condition中声明字段和entity中一致时, 无需配置此项，否则必须配置，并且值必须和
+     * entity实体中的字段属性一致。
      *
      * @return
      */
@@ -36,5 +45,10 @@ public @interface Condition {
      */
     boolean ignore() default false;
 
-    String rangeType() default "";
+    /**
+     * 当value为Conditions.Between时, 此配置用以区分前后区间。默认为RangeType.START
+     *
+     * @return
+     */
+    RangeType rangeType() default RangeType.START;
 }

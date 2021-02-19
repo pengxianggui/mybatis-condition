@@ -10,7 +10,7 @@ import java.util.Iterator;
  * @Author pengx
  * @Date 2020/4/17 11:00
  */
-public class AssemblerFactory {
+final public class AssemblerFactory {
 
     public static DefaultAssembler createDefaultAssembler(Conditions value) {
         DefaultAssembler assembler = null;

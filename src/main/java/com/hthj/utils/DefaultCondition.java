@@ -41,11 +41,11 @@ public abstract class DefaultCondition<T> extends DefaultPageCondition<T> implem
                     continue;
                 }
 
+                if (conditionAnnotation.ignore()) continue;
+
                 if (!StringUtils.isEmpty(conditionAnnotation.field())) {
                     fieldName = conditionAnnotation.field();
                 }
-
-                if (conditionAnnotation.ignore()) continue;
 
                 if (conditionAnnotation.value().equals(Conditions.Custom)) {
                     Class<? extends DefaultAssembler> assemblerClazz = conditionAnnotation.custom();

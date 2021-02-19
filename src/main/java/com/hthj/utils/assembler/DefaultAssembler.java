@@ -11,5 +11,12 @@ import com.hthj.utils.WrapperCondition;
 @FunctionalInterface
 public interface DefaultAssembler<C extends WrapperCondition> {
 
+    /**
+     * 构建QueryWrapper
+     * @param qw
+     * @param obj WrapperCondition
+     * @param fieldName entity对应的字段名
+     * @param fieldValue 条件值
+     */
     void assemble(QueryWrapper qw, C obj, String fieldName, Object fieldValue);
 }

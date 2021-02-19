@@ -10,7 +10,7 @@ import java.util.Optional;
  * @Author pengx
  * @Date 2020/4/17 12:47
  */
-public class RangeScope {
+final public class RangeScope {
     private Map<String, RangeUnit> scope = new HashMap<>();
 
     public boolean hasElement() {
