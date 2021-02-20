@@ -36,9 +36,9 @@ public abstract class DefaultPageCondition<T> implements Pageable<T> {
     }
 
     @Override
-    public IPage<T> toPage(Class<T> clazz) {
-        Page page = new Page(pageIndex, pageSize);
-        return page.addOrder(isAsc ? OrderItem.asc(orderBy) : OrderItem.desc(orderBy));
+    public IPage<T> toPage() {
+        Page page = new Page(pageIndex(), pageSize());
+        return page.addOrder(isAsc() ? OrderItem.asc(orderBy()) : OrderItem.desc(orderBy()));
     }
 
     public Integer getPageIndex() {

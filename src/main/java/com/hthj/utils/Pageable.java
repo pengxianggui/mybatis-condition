@@ -16,5 +16,5 @@ public interface Pageable<T> {
 
     boolean isAsc();
 
-    IPage<T> toPage(Class<T> clazz);
+    IPage<T> toPage();
 }

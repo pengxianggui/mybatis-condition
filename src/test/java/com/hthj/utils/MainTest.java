@@ -26,8 +26,8 @@ public class MainTest {
         userCondition.setPageIndex(1);
         userCondition.setPageSize(10);
 
-        IPage<User> page = userCondition.toPage(User.class);
-        Wrapper<User> wrapper = userCondition.toWrapper(User.class);
+        IPage<User> page = userCondition.toPage();
+        Wrapper<User> wrapper = userCondition.toWrapper();
         // execute your query
         // baseMapper.selectList(wrapper)
         // or

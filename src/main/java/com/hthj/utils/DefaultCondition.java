@@ -21,7 +21,7 @@ import java.lang.reflect.Field;
 public abstract class DefaultCondition<T> extends DefaultPageCondition<T> implements WrapperCondition<T> {
 
     @Override
-    public Wrapper<T> toWrapper(Class<T> clazz) {
+    public Wrapper<T> toWrapper() {
         QueryWrapper<T> qw = new QueryWrapper<T>();
 
         Field[] fields = this.getClass().getDeclaredFields();

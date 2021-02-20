@@ -10,8 +10,7 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 public interface WrapperCondition<T> {
     /**
      * 将condition转换为Wrapper，通过Condition上的注解确定其查询比较逻辑。
-     * @param clazz
      * @return
      */
-    Wrapper<T> toWrapper(Class<T> clazz);
+    Wrapper<T> toWrapper();
 }
