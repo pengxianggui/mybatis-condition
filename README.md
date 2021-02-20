@@ -12,7 +12,7 @@ public class User {
     // getter/setter
 }
 ```
-演示如何方便的构建查询。
+演示如何方便的构建查询:
 1. 首先创建一个查询条件类，叫做UserCondition，或者UserRequest都无所谓。
 ```java
 public class UserCondition extends DefaultCondition<User> {
